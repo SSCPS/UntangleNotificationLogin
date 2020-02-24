@@ -3,7 +3,10 @@
 Untanlge supplies only a Windows (VB) script to login a user transparently in the background (at login).  This repo is for Mac OS as well as Chrome OS (chromebooks).  It determines and sends an appropriate URL to an Untangle server.  
 
 # Mac OS Notes
-There is a bit more "auto-magic" stuff then Untangle's Windows script.  The IP to use for Untangle is assumed to be the gateway.  This can always be changed & hardcoded.
+There is a bit more "auto-magic" stuff then Untangle's Windows script:
+* The IP to use for Untangle is assumed to be the gateway.  This can always be changed & hardcoded.
+* The secretKey should replace <replace me>.
+* Also, the script is expected to be a LaunchAgent script.  The script and sample plist are in paths for their respective locations.
 
 # Chrome OS Notes
 First important piece is that there is an assumption users can already log into the Chromebook.  Any related Google URLs will need to be unblocked; a separate rack for "Chromebook_Login" can be used.  

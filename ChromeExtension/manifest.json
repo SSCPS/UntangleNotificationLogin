@@ -1,0 +1,32 @@
+{
+  "name": "Captive Portal Helper",
+  "description": "This extension will pass appropriate URL to Untangle's Captive Portal if it can't get to specific test URL.",
+  "version": "2.0.0.0",
+  "manifest_version": 2,
+  "permissions": [
+    "background",
+    "storage",
+    "alarms",
+    "notifications",
+    "identity",
+    "identity.email",
+    "networking.config",
+    "http://10.1.0.1/",
+    "http://10.2.0.1/",
+    "http://10.3.0.1/",
+    "http://en.wikipedia.org/wiki/Captive_portal"],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_title": "Captive Portal Helper Next Gen",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}

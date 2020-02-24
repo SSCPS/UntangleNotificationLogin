@@ -1,0 +1,73 @@
+<!-- Refer to LICENSE file for appropriate usage. -->
+<html>
+  <head>
+    <title>Captive Portal Helper Next Gen</title>
+    <style>
+      body {
+        text-align: left;
+        width: 600px;
+        border: 5px;
+        padding: 5px;
+        margin: 5px;
+      }
+
+      button {
+        margin: 5px;
+        outline: none;
+      }
+
+      button:hover {
+        outline: #80DEEA dotted thick;
+      }
+
+      table, th,td {
+        border: 1px solid black;
+      }
+    </style>
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+     -->
+  </head>
+  <body>
+      <p id="showExtensionName"><h1>Captive Portal Helper Next Gen</h1></p>
+      <p id="showVersion"><h2>Version: 2.0.0.0</h2></p>
+      <button id='internetCheck'>Internet Check</button> (for outside of Untangle)
+      <div class="menuAutoLogin" >
+        <input type="checkbox" id="checkboxAutoLogin" name="autoLoginLabel"/>
+        <label for="autoLoginLabel"><nobr>Autologin?</nobr></label> (for inside Untangle only)
+      </div>
+      <p id="showDebugInfo"><h2>Debug Information:</h2></p>
+      <table style="width:100%">
+        <tr>
+          <td colspan="2"><p id="showAlarmLengthParagraph"><b>runEvery:</b></p></td>
+        </tr>
+        <tr>
+          <td colspan="2"><p id="showUserNameParagraph"><b>userName:</b></p></td>
+        </tr>
+        <tr>
+          <td><p id="showHostNameParagraph"><b>hostName:</b></p></td>
+          <td><p id="showDomainNameParagraph"><b>domainName:</b></p></td>
+        </tr>
+        <tr>
+          <td><p id="showIPAddressParagraph"><b>ipAddress:</b></p></td>
+          <td><p id="showIPGatewayParagraph"><b>ipGateway:</b></p></td>
+        </tr>
+      </table>
+      <br/>
+      <div class="menuShowNotification" >
+        <input type="checkbox" id="checkboxShowNotification" name="autoNotificationLabel"/>
+        <label for="autoNotificationLabel"><nobr>Notification?</nobr></label>
+      </div>
+      <div class="menuEnableDebugLog" >
+        <input type="checkbox" id="checkboxEnableDebugLog" name="enableDebugLogLabel"/>
+        <label for="enableDebugLogLabel"><nobr>Debug Log?</nobr><button id='clearLog'>Clear Log</button><button id='refreshLog'>Refresh Log</button></label>
+      </div>
+      <p id="showDebugLog"><h2>Debug Log:</h2></p>
+      <p id="showDataDebugLog"><b></b></p>
+   <!-- link to non-persistent background script -->
+   <script src="popup.js"></script>
+  </body>
+</html>
